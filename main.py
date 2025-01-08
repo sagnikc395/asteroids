@@ -1,5 +1,6 @@
 import pygame
-from constants import *
+from constants import SCREEN_HEIGHT, SCREEN_WIDTH
+from player import Player
 
 
 def main():
@@ -18,6 +19,12 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill("black")
+        x = SCREEN_WIDTH / 2
+        y = SCREEN_HEIGHT / 2
+
+        player = Player(x, y)
+        player.draw(screen)
+
         # flip updates the full display surface to the screen
         pygame.display.flip()
         # updates the clock and convert from ms to seconds
